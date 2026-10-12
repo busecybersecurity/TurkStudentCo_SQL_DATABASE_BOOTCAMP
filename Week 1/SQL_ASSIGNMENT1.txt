@@ -1,0 +1,110 @@
+## A. Selecting Specific Columns
+
+**Question:** Write an SQL query that retrieves only the first name, last name, and salary of employees.
+
+```sql
+-- Retrieves only the first name, last name, and salary of employees.
+SELECT FirstName, LastName, Salary
+FROM Employees;
+```
+
+**Output (Example — 6 rows):**
+
+| FirstName | LastName | Salary |
+|-----------|----------|--------|
+| John | Doe | 55000.00 |
+| Jane | Smith | 65000.00 |
+| Sam | Brown | 52000.00 |
+| Lisa | White | 70000.00 |
+| Mark | Black | 75000.00 |
+| Lucy | Green | 60000.00 |
+
+---
+
+## B. Preventing Duplicates with DISTINCT
+
+**Question:** Write an SQL query that lists the departments employees work in without duplicates.
+
+```sql
+-- Retrieves unique department IDs of employees.
+SELECT DISTINCT DepartmentID
+FROM Employees;
+```
+
+**Output (Example — 3 rows):**
+
+| DepartmentID |
+|--------------|
+| 1 |
+| 2 |
+| 3 |
+
+---
+
+## C. Listing Employees in a Specific Department
+
+**Question:** Write an SQL query that lists only employees working in the IT department.
+
+```sql
+-- Retrieves employees in the IT department (DepartmentID = 1).
+SELECT *
+FROM Employees
+WHERE DepartmentID = 1;
+```
+
+**Output (Example — 3 rows):**
+
+| EmployeeID | FirstName | LastName | Age | DepartmentID | Salary | JoinDate |
+|------------|-----------|----------|-----|--------------|--------|----------|
+| 1 | John | Doe | 30 | 1 | 55000.00 | 2020-01-15 |
+| 3 | Sam | Brown | 28 | 1 | 52000.00 | 2021-04-25 |
+| 5 | Mark | Black | 50 | 1 | 75000.00 | 2015-11-05 |
+
+---
+
+## D. Sorting by Salary
+
+**Question:** Write an SQL query that sorts employees by salary in descending order.
+
+```sql
+-- Sorts employees by salary in descending order.
+SELECT *
+FROM Employees
+ORDER BY Salary DESC;
+```
+
+**Output (Example — 6 rows):**
+
+| EmployeeID | FirstName | LastName | Age | DepartmentID | Salary | JoinDate |
+|------------|-----------|----------|-----|--------------|--------|----------|
+| 5 | Mark | Black | 50 | 1 | 75000.00 | 2015-11-05 |
+| 4 | Lisa | White | 35 | 3 | 70000.00 | 2019-03-18 |
+| 2 | Jane | Smith | 45 | 2 | 65000.00 | 2018-07-20 |
+| 6 | Lucy | Green | 40 | 2 | 60000.00 | 2017-10-10 |
+| 1 | John | Doe | 30 | 1 | 55000.00 | 2020-01-15 |
+| 3 | Sam | Brown | 28 | 1 | 52000.00 | 2021-04-25 |
+
+---
+
+## E. Combining Columns (Concatenation)
+
+**Question:** Write an SQL query that combines employees' first and last names to create their full names.
+
+```sql
+-- Combines employees' first and last names to create full names.
+SELECT CONCAT(FirstName, ' ', LastName) AS FullName
+FROM Employees;
+```
+
+**Output (Example — 6 rows):**
+
+| FullName |
+|----------|
+| John Doe |
+| Jane Smith |
+| Sam Brown |
+| Lisa White |
+| Mark Black |
+| Lucy Green |
+
+---
